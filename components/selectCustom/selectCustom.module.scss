@@ -1,0 +1,103 @@
+@import "@/styles/variables.scss";
+
+.container {
+  width: 100%;
+  position: relative;
+  &:hover {
+    .placeholder {
+      transform: translateY(-100%);
+    }
+  }
+  [class$="control"] {
+    width: 100%;
+    background-color: $color-primary;
+    border-color: $color-primary;
+    height: 51px;
+    padding: 18px 24px;
+    border-radius: 119px;
+    box-shadow: none;
+    cursor: pointer;
+    @media (max-width: $laptop) {
+      padding: 15px 20px;
+      height: 43px;
+    }
+  }
+  [class$="control"]:hover {
+    border-color: $color-primary;
+  }
+  [class$="ValueContainer"] {
+    display: flex;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  [class$="indicatorSeparator"] {
+    display: none;
+  }
+  [class$="Input"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+  [class$="singleValue"],
+  [class$="placeholder"] {
+    margin: 0;
+    color: $color-light;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1.05px;
+    text-transform: uppercase;
+    padding-right: 26px;
+    white-space: nowrap;
+    @media (max-width: $laptop) {
+      font-size: 13px;
+      letter-spacing: 0.91px;
+      padding-right: 25px;
+    }
+    @media (max-width: $tablet) {
+      font-size: 12px;
+      letter-spacing: 0.84px;
+      padding-right: 22px;
+    }
+  }
+  .placeholder {
+    display: block;
+    transition: 0.4s ease transform;
+    &::after {
+      content: attr(data-placeholder);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: translateY(100%);
+    }
+  }
+  .icon {
+    padding: 0;
+    color: $color-light;
+    position: absolute;
+    top: 17px;
+    right: 26px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: $laptop) {
+      top: 13px;
+      right: 20px;
+    }
+    svg {
+      display: block;
+      width: 100%;
+      fill: $color-light;
+    }
+  }
+}

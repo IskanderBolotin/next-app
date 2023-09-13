@@ -1,0 +1,31 @@
+@import "@/styles/variables.scss";
+
+.banner {
+  width: 100%;
+  position: relative;
+  padding-top: 34.09%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: $laptop) {
+    padding-top: 37.2%;
+  }
+  @media (max-width: $tablet) {
+    padding-top: 42.63%;
+  }
+  @media (max-width: $mobile-l) {
+    padding-top: 70.78%;
+  }
+  @media (max-width: $mobile-s) {
+    padding-top: 97.8125%;
+  }
+}
+.inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

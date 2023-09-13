@@ -1,0 +1,43 @@
+@import "@/styles/variables.scss";
+
+.wrapper {
+  background-color: #fff;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+.btn {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  border: 0;
+  display: block;
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: $mobile-l) {
+    top: 40px;
+    right: 40px;
+  }
+  @media (max-width: $mobile-s) {
+    top: 20px;
+    right: 20px;
+  }
+}

@@ -1,0 +1,67 @@
+@import "@/styles/variables.scss";
+
+.wrapper {
+  position: relative;
+}
+.label {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 160%;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform-origin: left;
+  transform: translateY(-23px) scale(0.8);
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  pointer-events: none;
+  @media (max-width: $laptop) {
+    font-size: 16px;
+  }
+  @media (max-width: $tablet) {
+    font-size: 14px;
+  }
+  @media (max-width: $mobile-s) {
+    font-size: 11px;
+  }
+}
+.text {
+  width: 100%;
+  display: block;
+  background-color: transparent;
+  border: 0;
+  padding: 0 0 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  &::-webkit-input-placeholder {
+    color: transparent;
+    font-size: 0px;
+  }
+  &::-moz-placeholder {
+    color: transparent;
+    font-size: 0px;
+  }
+  &:-ms-input-placeholder {
+    color: transparent;
+    font-size: 0px;
+  }
+  &::-ms-input-placeholder {
+    color: transparent;
+    font-size: 0px;
+  }
+  &::placeholder {
+    color: transparent;
+    font-size: 0px;
+  }
+  &:placeholder-shown {
+    & + .label {
+      transform: translateY(0) scale(1);
+    }
+  }
+  &:focus {
+    & + .label {
+      transform: translateY(-23px) scale(0.8);
+    }
+  }
+}

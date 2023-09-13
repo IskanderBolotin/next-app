@@ -1,0 +1,70 @@
+@import "@/styles/variables.scss";
+
+.wrapper {
+  max-width: 587px;
+  width: 100%;
+  margin: 0 auto;
+}
+.title {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+  @media (max-width: $laptop) {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+  @media (max-width: $tablet) {
+    font-size: 28px;
+  }
+  @media (max-width: $mobile-s) {
+    font-size: 20px;
+    text-align: left;
+  }
+}
+.bottom {
+  margin-top: 50px;
+  @media (max-width: $mobile-s) {
+    margin-top: 40px;
+  }
+}
+.text {
+  text-align: center;
+  opacity: 0.5;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  max-width: 415px;
+  margin: 0 auto 30px;
+  @media (max-width: $mobile-s) {
+    margin-bottom: 20px;
+  }
+}
+.btn {
+  max-width: 234px;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: $laptop) {
+    max-width: 228px;
+  }
+  @media (max-width: $tablet) {
+    max-width: 170px;
+  }
+}
+.item {
+  &:not(:last-child) {
+    margin-bottom: 50px;
+    @media (max-width: $laptop) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: $tablet) {
+      margin-bottom: 45px;
+    }
+    @media (max-width: $mobile-s) {
+      margin-bottom: 40px;
+    }
+  }
+}
