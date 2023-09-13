@@ -25,7 +25,7 @@
   [class$="control"]:hover {
     border-color: $color-primary;
   }
-  [class$="ValueContainer"] {
+  [class$="ValueContainer"], .valueContainer {
     display: flex;
     padding: 0;
     position: relative;
@@ -34,7 +34,7 @@
   [class$="indicatorSeparator"] {
     display: none;
   }
-  [class$="Input"] {
+  [class$="Input"], .selectInput {
     position: absolute;
     width: 1px;
     height: 1px;

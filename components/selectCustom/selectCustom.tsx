@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
-import Select, { components, IndicatorsContainerProps } from "react-select";
+import Select, { components, IndicatorsContainerProps, ValueContainerProps } from "react-select";
 import Iconindicator from "./icons/icon-indicator.svg";
 import s from "./selectCustom.module.scss";
+import { InputProps } from "react-select";
 
 
 type selectOptionType = {
@@ -24,20 +25,25 @@ const IndicatorsContainer = (
     </div>
   );
 };
-
+const ValueContainer = (
+ {
+  children,
+  ...props
+ }: ValueContainerProps
+) => {
+  return (
+    <components.ValueContainer {...props} className={s.valueContainer}>{children}</components.ValueContainer>
+  );
+};
+const Input = (props: InputProps) => {
+  return <components.Input {...props}  className={s.selectInput} />;
+};
 const SelectCustom: React.FC<Props> = ({options, placeholder}) => {
 
   const renderPlaceholder = () => {
     return <div className={s.placeholder} data-placeholder={placeholder}>{placeholder}</div>
   }
 
-  const renderIndicator = () => {
-    return (
-      <span className={s.icon}>
-        <Iconindicator />
-      </span>
-    )
-  }
   return (
     <>
       <Select
@@ -45,7 +51,9 @@ const SelectCustom: React.FC<Props> = ({options, placeholder}) => {
         className={s.container}
         placeholder={renderPlaceholder()}
         components={{
-          IndicatorsContainer: IndicatorsContainer
+          IndicatorsContainer,
+          ValueContainer,
+          Input
         }}
       />
     </>
