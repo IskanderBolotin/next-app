@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import Portal, { createContainer } from "../portal";
+import Portal from "../portal";
 import IconClose from "./icons/icon-close.svg";
 import s from "./modal.module.scss";
 
@@ -8,14 +8,11 @@ type Props = {
   children: React.ReactNode;
 };
 
-const MODAL_CONTAINER_ID = "modal-container-id";
-
 const Modal: React.FC<Props> = ({ onClose, children }) => {
   const rootRef = useRef<HTMLDivElement>(null);
   const [isMounted, setMounted] = useState(false);
 
   useEffect(() => {
-    createContainer({ id: MODAL_CONTAINER_ID });
     setMounted(true);
   }, []);
 
@@ -55,8 +52,8 @@ const Modal: React.FC<Props> = ({ onClose, children }) => {
     onClose?.();
   }, [onClose]);
 
-  return isMounted ? (
-    <Portal id={MODAL_CONTAINER_ID}>
+  return (
+    <Portal>
       <div className={s.wrapper}>
         <div className={s.container}>
           <button type="button" className={s.btn} onClick={handleClose}>
@@ -66,7 +63,7 @@ const Modal: React.FC<Props> = ({ onClose, children }) => {
         </div>
       </div>
     </Portal>
-  ) : null;
+  )
 };
 
 export default Modal;
